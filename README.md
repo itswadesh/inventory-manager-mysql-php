@@ -1,6 +1,7 @@
-# Product – Inventory manager using AngularJS, MySQL and PHP RESTful API
+# Product – Inventory manager using AngularJS, H2 and Spring-boot
 
 ## How to use
 * Download the project file from the download link provided above
-* Import the database file “products.sql” into MySQL database
-* Add your database settings to the file “config.php”
+* Run 'mvn clean package' to compile
+* Start the server with 'java -jar target/inventory-manager-1.0-SNAPSHOT.war'
+* Open your browser and go to 'http://localhost:8080/'
