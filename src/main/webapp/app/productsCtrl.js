@@ -1,7 +1,7 @@
 app.controller('productsCtrl', function ($scope, $modal, $filter, Data) {
     $scope.product = {};
     Data.get('products').then(function(data){
-        $scope.products = data.data;
+        $scope.products = data;
     });
     $scope.changeProductStatus = function(product){
         product.status = (product.status=="Active" ? "Inactive" : "Active");
@@ -84,7 +84,7 @@ app.controller('productEditCtrl', function ($scope, $modalInstance, item, Data) 
                     if(result.status != 'error'){
                         var x = angular.copy(product);
                         x.save = 'insert';
-                        x.id = result.data;
+                        x.id = result[0].id;
                         $modalInstance.close(x);
                     }else{
                         console.log(result);
